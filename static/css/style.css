@@ -1,0 +1,426 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #eef2f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #1f2937;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.login-container,
+.dashboard-container {
+    width: 100%;
+    max-width: 980px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 24px 54px rgba(15, 23, 42, 0.12);
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+.login-container h1,
+.dashboard-container h1 {
+    margin-top: 0;
+    color: #0f172a;
+    font-size: 34px;
+}
+
+.login-container p,
+.dashboard-container p {
+    color: #475569;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.login-container input,
+.ticket-section input,
+.ticket-section textarea,
+.input-area input {
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 14px;
+    font-size: 15px;
+    outline: none;
+    background: #f8fafc;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.login-container input:focus,
+.ticket-section input:focus,
+.ticket-section textarea:focus,
+.input-area input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.login-container button,
+.dashboard-cards button,
+.ticket-section button,
+.input-area button {
+    padding: 14px 18px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-container button:hover,
+.dashboard-cards button:hover,
+.ticket-section button:hover,
+.input-area button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.18);
+}
+
+.error {
+    color: #dc2626;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.dashboard-container {
+    max-width: 1100px;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 220px;
+}
+
+.card h2 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 22px;
+}
+
+.card p {
+    color: #475569;
+}
+
+.card a {
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.switch-link {
+    margin-top: 18px;
+    color: #475569;
+}
+
+.switch-link a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.switch-link a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Chat container updated for wider desktop view */
+.chat-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 85vh;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Header */
+.chat-header {
+    background: #2e7d32;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.chat-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.chat-header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #c8e6c9;
+}
+
+/* Split layout wrapper for side-by-side elements */
+.main-content-layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Chat wrapper taking up the left side */
+.chat-section-left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #c8e6c9;
+}
+
+/* Chat box */
+.chat-box {
+    flex: 1;
+    padding: 18px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #f9fff9;
+}
+
+/* Message animation */
+.message {
+    padding: 12px 16px;
+    border-radius: 14px;
+    max-width: 80%;
+    line-height: 1.5;
+    font-size: 15px;
+    word-wrap: break-word;
+    animation: slideUp 0.3s ease-in-out;
+}
+
+.bot-message {
+    background: #e0f2e9;
+    align-self: flex-start;
+    color: #111827;
+}
+
+.user-message {
+    background: #2e7d32;
+    align-self: flex-end;
+    color: white;
+}
+
+/* Input area */
+.input-area {
+    display: flex;
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #c8e6c9;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #a5d6a7;
+    border-radius: 12px;
+    font-size: 15px;
+    outline: none;
+    background: white;
+    color: #111827;
+    transition: border-color 0.3s ease;
+}
+
+.input-area input:focus {
+    border-color: #2e7d32;
+}
+
+.input-area input::placeholder {
+    color: #6b7280;
+}
+
+/* Button animation */
+.input-area button {
+    margin-left: 10px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #2e7d32;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input-area button:hover {
+    background: #1b5e20;
+    transform: scale(1.05);
+}
+
+/* Ticket section placed on the right side */
+.ticket-section {
+    flex: 1;
+    padding: 24px;
+    background: #f1f8f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ticket-section h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #111827;
+}
+
+.ticket-section input,
+.ticket-section textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #a5d6a7;
+    border-radius: 12px;
+    background: white;
+    color: #111827;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.ticket-section input:focus,
+.ticket-section textarea:focus {
+    border-color: #2e7d32;
+}
+
+.ticket-section textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Ticket button animation */
+.ticket-section button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #2e7d32;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ticket-section button:hover {
+    background: #1b5e20;
+    transform: scale(1.03);
+}
+
+/* Typing animation */
+#typing {
+    font-style: italic;
+    opacity: 0.7;
+    color: #2e7d32;
+    animation: typingBlink 1s infinite;
+}
+
+/* Fade-in animation for container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-up animation for messages */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Blinking animation for typing */
+@keyframes typingBlink {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}  
+/* Chat Bubble Animation */
+
+.ai-message{
+    animation: slideLeft 0.4s ease;
+}
+
+.user-message{
+    animation: slideRight 0.4s ease;
+}
+
+@keyframes slideRight{
+    from{
+        opacity:0;
+        transform:translateX(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes slideLeft{
+    from{
+        opacity:0;
+        transform:translateX(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}

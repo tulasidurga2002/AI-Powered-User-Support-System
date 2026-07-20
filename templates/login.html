@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AI Powered User Support System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <h1>🤖 AI Powered User Support System</h1>
+        <p>Login to access AI support assistant</p>
+
+        <form action="/login" method="POST">
+
+            <input 
+                type="text" 
+                name="username" 
+                placeholder="Enter Username"
+                required
+            >
+
+            <input 
+                type="password" 
+                name="password" 
+                placeholder="Enter Password"
+                required
+            >
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <p class="switch-link">
+            Don't have an account? <a href="/signup">Sign up here</a>
+        </p>
+
+    </div>
+
+</body>
+</html>

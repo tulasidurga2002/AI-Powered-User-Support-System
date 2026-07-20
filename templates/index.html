@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Powered User Support System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="chat-container">
+
+        <!-- Header -->
+        <div class="chat-header">
+            <h1>AI Powered User Support System</h1>
+            <p>Smart assistance for instant customer support</p>
+        </div>
+
+        <!-- Desktop Split Layout Wrapper -->
+        <div class="main-content-layout">
+            
+            <!-- LEFT SIDE: Chat Section -->
+            <div class="chat-section-left">
+                <!-- Chat Box -->
+                <div class="chat-box" id="chat-box">
+                    <div class="message bot-message">
+                        👋 Welcome! I am your AI Support Assistant. How can I help you today?
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-area">
+                    <input type="text" id="user-input" placeholder="Ask your support question here...">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: Ticket Section -->
+            <div class="ticket-section" id="ticket-section">
+                <h3>Still need help? Create a Support Ticket</h3>
+
+                <input type="text" id="ticket-name" placeholder="Enter your full name">
+
+                <textarea id="ticket-issue" placeholder="Describe your issue in detail"></textarea>
+
+                <button onclick="createTicket()">Create Ticket</button>
+            </div>
+
+        </div> <!-- End of Desktop Layout Wrapper -->
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html> 

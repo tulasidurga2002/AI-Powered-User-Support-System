@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Tickets</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1>Your Tickets</h1>
+        <p>Track ticket status and view issue history.</p>
+    </div>
+    <div class="dashboard-cards" style="grid-template-columns: 1fr; gap: 20px;">
+        <div class="card">
+            {% if tickets %}
+                <table style="width:100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left; padding: 12px; border-bottom: 1px solid #e2e8f0;">Ticket #</th>
+                            <th style="text-align:left; padding: 12px; border-bottom: 1px solid #e2e8f0;">Issue</th>
+                            <th style="text-align:left; padding: 12px; border-bottom: 1px solid #e2e8f0;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ticket in tickets %}
+                        <tr>
+                            <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">{{ ticket.id }}</td>
+                            <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">{{ ticket.issue }}</td>
+                            <td style="padding: 12px; border-bottom: 1px solid #e2e8f0;">{{ ticket.status }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No tickets submitted yet.</p>
+            {% endif %}
+            <a href="/dashboard"><button>Back to dashboard</button></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

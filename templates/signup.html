@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - AI Support System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Create Account</h1>
+            <p>Sign up to access the AI Support System</p>
+
+            <form action="/signup" method="POST">
+                <input type="text" name="username" placeholder="Choose a username" required>
+                <input type="password" name="password" placeholder="Choose a password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+
+            <p>Already have an account? <a href="/login">Login here</a></p>
+
+            {% if message %}
+            <p class="message">{{ message }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

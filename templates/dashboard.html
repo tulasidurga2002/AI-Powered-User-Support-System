@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - AI Support System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+
+<body>
+
+<div class="dashboard-container">
+
+    <div class="dashboard-header">
+
+        <h1>
+            Welcome, {{ session["user"] }} 👋
+        </h1>
+
+        <p>
+            AI Powered User Support System Dashboard
+        </p>
+
+    </div>
+
+
+    <div class="dashboard-cards">
+
+
+        <div class="card">
+
+            <h2>💬 AI Chat Support</h2>
+
+            <p>
+                Get instant answers for your support queries using AI.
+            </p>
+
+            <a href="/chatbot">
+                <button>
+                    Start Chat
+                </button>
+            </a>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h2>🎫 Create Support Ticket</h2>
+
+            <p>
+                Submit your issue and get help from the support team.
+            </p>
+
+            <a href="/tickets">
+                <button>
+                    View Tickets
+                </button>
+            </a>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h2>🚪 Logout</h2>
+
+            <p>
+                Logout from your account safely.
+            </p>
+
+            <a href="/logout">
+                <button>
+                    Logout
+                </button>
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
